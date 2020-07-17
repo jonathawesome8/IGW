@@ -66,6 +66,7 @@ window.addEventListener("wheel", doMouseWheel, true);
 //Main Loop
 var oneachframe = function() {
 	reinitializeGraphics();
+	console.log(resourcesAmounts);
 	if (isKeyPressed("Escape")) { process.exit(1) }
 	if (gameScreen != 7) { //Music
 		battleMusic.stop();
@@ -828,6 +829,10 @@ var oneachframe = function() {
 					setColor("white");
 					if (isMouseClick()) {
 						gameScreen = 9;
+						ships += [name,shipParts,[currentGalaxy,currentSystem,currentPlanet]];
+						for (i = 0;i < resourcesAmounts.length;i++) {
+							resourcesAmounts[i] -= shipCost[i];
+						}
 					}
 				} else {
 					setColor("black");
@@ -874,10 +879,6 @@ var oneachframe = function() {
 		fill("black");
 		setColor("white");
 		fillText("ship built",400,225,true);
-		ships += [name,shipParts,[currentGalaxy,currentSystem,currentPlanet]];
-		for (i = 0;i < resourcesAmounts.length;i++) {
-			resourcesAmounts[i] -= shipCost[i];
-		}
 	} else if (gameScreen == 10) { //You lose screen
 		setColor("black");
 		fillRoundedRect(400,225,400,250,5,true);
