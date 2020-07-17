@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Name of Game</title>
+</head>
+<body style="overflow: hidden;">
+<style>
+canvas {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+</style>
+<script>var ngui = require("nw.gui");
+var nwin = ngui.Window.get();
+nwin.enterFullscreen();
+var sw = 800;
+var sh = 450; //Screen width and screen height. Global vars.</script>
+<canvas id="can" position="absolute" style="margin-left: -0.6%; margin-top: -0.6%; margin-bottom: -0.6%; overflow: hidden;"></canvas>
+<script>var a = document.getElementById("can");
+var ctx = a.getContext("2d");</script>
+<script src="scripts/Functions.js"></script>
+<script src="scripts/Data.js"></script>
+<script src="scripts/IGW.js"></script>
+</body>
+</html>
